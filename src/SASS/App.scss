@@ -16,5 +16,13 @@
         display: grid;
         gap: 30px;
         grid-template-rows: auto auto;
+        margin-right: 70px;
+
+        .add {
+            background-color: $Blue;
+            box-shadow: 0 10px 5px rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 20px;
+        }
     }
 }

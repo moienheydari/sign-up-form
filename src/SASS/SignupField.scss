@@ -1,6 +1,10 @@
 .signup-field {
     display: grid;
     grid-template-rows: repeat(5, 1fr) 30px;
+    background-color: #fff;
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 20px;
 
     * {
         margin: 15px;
