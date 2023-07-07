@@ -1,0 +1,12 @@
+.signup-field {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr) 30px;
+
+    * {
+        margin: 15px;
+    }
+
+    .disclaimer {
+        margin-top: 0;
+    }
+}
