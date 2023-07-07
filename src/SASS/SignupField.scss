@@ -1,16 +1,42 @@
+@import 'base';
+
 .signup-field {
     display: grid;
-    grid-template-rows: repeat(5, 1fr) 30px;
+    grid-template-rows: repeat(5, 1fr auto);
     background-color: #fff;
     box-shadow: 0 10px 5px rgba(0, 0, 0, 0.4);
     padding: 20px;
     border-radius: 20px;
 
-    * {
-        margin: 15px;
+    input {
+        height: 40px;
+        padding: 25px;
+        font-weight: 400;
+    }
+
+    .warning {
+        margin: 0;
+        font-size: 9px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        justify-self: right;
+    }
+
+    button {
+        background-color: $Green;
+        color: white;
+        font-size: 18px;
+        text-transform: uppercase;
     }
 
     .disclaimer {
-        margin-top: 0;
+        margin-top: 8px;
+        font-size: 12px;
+        justify-self: center;
+        color: $Grayish-blue;
+        
+        a {
+            color: $Red;
+        }
     }
 }

@@ -10,7 +10,7 @@ function App() {
           but understanding how developers think is invaluable.</p>
       </div>
       <div className='signup-cont'>
-        <div className='add'>Try it free 7 days then $20/mo. thereafter</div>
+        <div className='add'><p><span className='bold'>Try it free 7 days</span> then $20/mo. thereafter</p></div>
         <SignupField />
       </div>
     </div>
