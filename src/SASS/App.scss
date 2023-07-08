@@ -1,13 +1,14 @@
 @import 'base';
 @import url(https://fonts.google.com/specimen/Poppins);
+
 .App {
-    background: url('../images/bg-intro-desktop.png') no-repeat center center;
+    background: url('../images/bg-intro-desktop.png') no-repeat center center / cover;
     background-color: $Red;
+    height: 100%;
     width: 100%;
-    height: 100vh;
     display: grid;
     gap: 80px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 550px);
     padding: 100px;
     align-items: center;
 
@@ -58,4 +59,68 @@
 
 .bold {
     font-weight: bold;
+}
+
+
+@media (max-width: 767px) {
+    .App {
+        background: url('../images/bg-intro-mobile.png') no-repeat center center / cover;
+        background-color: $Red;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        gap: 50px;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(2, auto);
+        padding: 20px;
+        justify-items: center;
+        padding-bottom: 100px;
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            transition: 0.5s;
+        }
+
+        .intro {
+            margin-top: 0px;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+
+            * {
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 50px;
+                line-height: 50px;
+                color: white;
+            }
+
+            p {
+                font-size: 17px;
+                line-height: 20px;
+                color: white;
+            }
+        }
+
+        .signup-cont {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: 450px;
+            grid-template-rows: auto auto;
+            margin: 0;
+
+            .add {
+                background-color: $Blue;
+                box-shadow: 0 10px 5px rgba(0, 0, 0, 0.4);
+                padding: 20px;
+                border-radius: 15px;
+                color: white;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    }
 }
