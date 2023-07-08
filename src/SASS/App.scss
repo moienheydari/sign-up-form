@@ -1,5 +1,5 @@
 @import 'base';
-
+@import url(https://fonts.google.com/specimen/Poppins);
 .App {
     background: url('../images/bg-intro-desktop.png') no-repeat center center;
     background-color: $Red;
@@ -11,6 +11,31 @@
     padding: 100px;
     align-items: center;
 
+    * {
+        font-family: 'Poppins', sans-serif;
+        transition: 0.5s;
+    }
+
+    .intro {
+        padding-left: 50px;
+        padding-right: 50px;
+
+        * {
+            margin: 30px;
+        }
+
+        h1 {
+            font-size: 50px;
+            line-height: 50px;
+            color: white;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 20px;
+            color: white;
+        }
+    }
 
     .signup-cont {
         display: grid;
