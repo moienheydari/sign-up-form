@@ -29,7 +29,7 @@ Users should be able to:
 ### Screenshot
 
 ![](./screenshot.jpg)
-![](./screenshot1.jpg)
+![](./screenshot_mobile.jpg)
 
 ### Links
 
