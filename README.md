@@ -36,7 +36,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](./build/index.html)
+- Live Site URL: [Add live site URL here](https://htmlpreview.github.io/?https://github.com/moienheydari/sign-up-form/blob/main/build/index.html)
 
 ## My process
 
