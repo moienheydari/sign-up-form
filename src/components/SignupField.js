@@ -14,9 +14,9 @@ export default function SignupField() {
         email: true,
         password: true
     });
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     useEffect(() => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (Boolean(form.firstName)) { setError((prev) => { return { ...prev, firstName: true } }) };
         if (Boolean(form.lastName)) { setError((prev) => { return { ...prev, lastName: true } }) };
         if (Boolean(form.password)) { setError((prev) => { return { ...prev, password: true } }) };
@@ -24,6 +24,7 @@ export default function SignupField() {
     }, [form]);
 
     let handleClick = () => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         setError((prev) => {
             return {
                 firstName: Boolean(form.firstName),
@@ -32,9 +33,12 @@ export default function SignupField() {
                 email: Boolean(emailRegex.test(form.email))
             }
         })
-        if (Object.values(err).every(i => { return i; })) {
-            alert(JSON.stringify(form, '', 2));
-        }
+        setError((prev) => {
+            if (Object.values(prev).every(i => { return i; })) {
+                alert(JSON.stringify(form, '', 2));
+            }
+            return prev;
+        })
     }
 
     return (
