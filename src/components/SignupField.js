@@ -24,13 +24,17 @@ export default function SignupField() {
     }, [form]);
 
     let handleClick = () => {
-        setError({
-            firstName: Boolean(form.firstName),
-            lastName: Boolean(form.lastName),
-            password: Boolean(form.password),
-            email: Boolean(emailRegex.test(form.email))
+        setError((prev) => {
+            return {
+                firstName: Boolean(form.firstName),
+                lastName: Boolean(form.lastName),
+                password: Boolean(form.password),
+                email: Boolean(emailRegex.test(form.email))
+            }
         })
-        alert(JSON.stringify(form, '', 2));
+        if (Object.values(err).every(i => { return i; })) {
+            alert(JSON.stringify(form, '', 2));
+        }
     }
 
     return (
@@ -44,9 +48,9 @@ export default function SignupField() {
                     type='text'
                     onChange={({ target }) => { setForm(prev => { return { ...prev, [target.name]: target.value } }) }}
                 ></input>
-                <svg className='exMark' width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12" /><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1" /><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1" /></g></svg>
+                <svg className={`exMark ${(!err.firstName) ? 'error' : ''}`} width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12" /><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1" /><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1" /></g></svg>
             </div>
-            <span className='warning'>First Name can not be empty</span>
+            <span className={`warning ${(!err.firstName) ? 'error' : ''}`}>First Name can not be empty</span>
             <div className='inputCont'>
                 <input
                     className={`${(!err.lastName) ? 'error' : ''}`}
@@ -56,9 +60,9 @@ export default function SignupField() {
                     type='text'
                     onChange={({ target }) => { setForm(prev => { return { ...prev, [target.name]: target.value } }) }}
                 ></input>
-                <svg className='exMark' width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12" /><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1" /><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1" /></g></svg>
+                <svg className={`exMark ${(!err.lastName) ? 'error' : ''}`} width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12" /><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1" /><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1" /></g></svg>
             </div>
-            <span className='warning'>Last Name can not be empty</span>
+            <span className={`warning ${(!err.lastName) ? 'error' : ''}`}>Last Name can not be empty</span>
             <div className='inputCont'>
                 <input
                     className={`${(!err.email) ? 'error' : ''}`}
@@ -68,9 +72,9 @@ export default function SignupField() {
                     type='text'
                     onChange={({ target }) => { setForm(prev => { return { ...prev, [target.name]: target.value } }) }}
                 ></input>
-                <svg className='exMark' width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12" /><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1" /><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1" /></g></svg>
+                <svg className={`exMark ${(!err.email) ? 'error' : ''}`} width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12" /><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1" /><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1" /></g></svg>
             </div>
-            <span className='warning'>Doesn't look like an email</span>
+            <span className={`warning ${(!err.email) ? 'error' : ''}`}>Doesn't look like an email</span>
             <div className='inputCont'>
                 <input
                     className={`${(!err.password) ? 'error' : ''}`}
@@ -80,9 +84,9 @@ export default function SignupField() {
                     type='password'
                     onChange={({ target }) => { setForm(prev => { return { ...prev, [target.name]: target.value } }) }}
                 ></input>
-                <svg className='exMark' width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12" /><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1" /><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1" /></g></svg>
+                <svg className={`exMark ${(!err.password) ? 'error' : ''}`} width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12" /><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1" /><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1" /></g></svg>
             </div>
-            <span className='warning'>Password can not be empty</span>
+            <span className={`warning ${(!err.password) ? 'error' : ''}`}>Password can not be empty</span>
             <button onClick={handleClick}>Claim your free trial</button>
             <span className='disclaimer'>By clicking the button, you are agreeing to our <a href='#signup-field' >Terms and Services</a></span>
         </div>

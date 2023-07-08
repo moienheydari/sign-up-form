@@ -11,9 +11,14 @@
     .inputCont {    
         position: relative;;
         .exMark {
+            display: none;
+        }
+
+        .exMark.error {
             position: absolute;
             right: 15px;
             top: 14px;
+            display: block;
         }
 
         input {
@@ -42,6 +47,11 @@
         margin-top: 2px;
         justify-self: right;
         color: $Red;
+        visibility: hidden;
+    }
+
+    .warning.error {
+        visibility: visible;
     }
 
     button {
