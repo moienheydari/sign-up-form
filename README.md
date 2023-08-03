@@ -13,9 +13,9 @@
 
 ### The challenge
 
-Users should be able to:
+Users are able to:
 
-- View the optimal layout for the site depending on their device's screen size
+- View the optimal layout for the site depending on their device's screen size (Full Responsiveness)
 - See hover states for all interactive elements on the page
 - Receive an error message when the `form` is submitted if:
   - Any `input` field is empty. The message for this error should say *"[Field Name] cannot be empty"*
